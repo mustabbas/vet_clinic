@@ -1,47 +1,40 @@
-# curriculum-databases-projects-template
+# vet_clinic
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+This repo for data structure of a vet clinic.
+
+
+## Built With
+
+-  PostgreSQL
+-  Visual Studio Code: A source code editor
+-  Git: A tool for managing source code
 
 
 ## Getting Started
 
-This repository includes files with plain SQL that can be used to recreate a database:
+Download the ZIP from this [Link](https://github.com/mustabbas/vet_clinic), or run the following git command to clone the files to your machine:
 
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+git clone https://github.com/mustabbas/vet_clinic.git
 
 
 ## Authors
 
-👤 **Author1**
+👤 **MUSTAFA ABBAS**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/mustabbas)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mustabbas/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/mustabbas/vet_clinic/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
