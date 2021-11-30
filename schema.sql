@@ -9,6 +9,7 @@ CREATE DATABASE vet_clinic
     TABLESPACE = pg_default
     CONNECTION LIMIT = -1;
 
+-- Vet clinic database: create animals table
 CREATE TABLE IF NOT EXISTS public.animals
 (
     id integer NOT NULL,
@@ -20,3 +21,15 @@ CREATE TABLE IF NOT EXISTS public.animals
     CONSTRAINT animals_pkey PRIMARY KEY (id)
 )
 
+-- Vet clinic database: query and update animals table
+CREATE TABLE IF NOT EXISTS public.animals
+(
+    id integer NOT NULL,
+    name character varying COLLATE pg_catalog."default",
+    date_of_birth date,
+    escape_attempts integer,
+    neutered boolean,
+    weight_kg numeric,
+    species character varying COLLATE pg_catalog."default",
+    CONSTRAINT animals_pkey PRIMARY KEY (id)
+)
