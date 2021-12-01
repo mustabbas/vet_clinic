@@ -42,6 +42,43 @@ SELECT MIN(weight_kg) FROM public.animals;
 SELECT avg(escape_attempts) FROM public.animals
 	where date_of_birth  between '1990/01/01' and '2000/12/31';
 
+-- Vet clinic database: query multiple tables
+-- What animals belong to Melody Pond?
+SELECT name FROM public.animals 
+join public.owners on public.animals.owner_id = public.owners.id
+where public.owners.full_name = 'Melody Pond'
+-- List of all animals that are pokemon (their type is Pokemon).
+SELECT public.animals.name FROM public.animals 
+join public.species on public.animals.species_id = public.species.id
+where public.species.name = 'Pokemon'
+-- List all owners and their animals, remember to include those that don't own any animal.
+SELECT public.owners.full_name, public.animals.name FROM public.owners
+LEFT join public.animals on public.owners.id = public.animals.owner_id 
+ORDER BY public.owners.full_name
+-- How many animals are there per species?
+SELECT count(*) FROM public.animals
+join public.species on public.animals.species_id = public.species.id
+where public.species.name = 'Pokemon'
+
+SELECT count(*) FROM public.animals
+join public.species on public.animals.species_id = public.species.id
+where public.species.name = 'Digimon'
+-- List all Digimon owned by Jennifer Orwell.
+SELECT public.animals.name FROM public.animals
+join public.species on public.animals.species_id = public.species.id
+join public.owners on public.animals.owner_id = public.owners.id
+where public.species.name = 'Digimon' and public.owners.full_name = 'Jennifer Orwel'
+-- List all animals owned by Dean Winchester that haven't tried to escape.
+SELECT public.animals.name FROM public.animals
+join public.owners on public.animals.owner_id = public.owners.id
+where public.owners.full_name = 'Dean Winchester'
+and public.animals.escape_attempts = 0
+-- Who owns the most animals?
+SELECT  public.owners.full_name, COUNT(*) most FROM public.animals
+join public.owners on public.animals.owner_id = public.owners.id
+GROUP BY public.owners.full_name
+ORDER BY most DESC
+LIMIT 1
 
 
 
