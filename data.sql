@@ -85,3 +85,109 @@ INSERT INTO public.animals(
 INSERT INTO public.animals(
     id, name, date_of_birth, escape_attempts, neutered, weight_kg, species_id, owner_id)
     VALUES (6,'Blossom', '13-10-1998', 3, 'true', 17, 1, 4);
+INSERT INTO public.animals(
+    id, name, date_of_birth, escape_attempts, neutered, weight_kg, species_id, owner_id)
+    VALUES (7,'Agumon', '03-02-2020', 0, 'true', 10.23, 2, 1);
+
+INSERT INTO public.animals(
+    id, name, date_of_birth, escape_attempts, neutered, weight_kg, species_id, owner_id)
+    VALUES (8,'Gabumon', '05-11-2018', 2, 'true', 8, 2, 2);
+
+INSERT INTO public.animals(
+    id, name, date_of_birth, escape_attempts, neutered, weight_kg, species_id, owner_id)
+    VALUES (9,'Pikachu', '07-01-2021', 1, 'false', 15.04, 1, 2);
+
+INSERT INTO public.animals(
+    id, name, date_of_birth, escape_attempts, neutered, weight_kg, species_id, owner_id)
+    VALUES (10,'Devimon', '12-05-2017', 5, 'true', 11, 2, 3);
+
+-- Vet clinic database: add "join table" for visits
+-- Insert data for vets
+INSERT INTO public.vets(
+    id, name, age, date_of_graduation )
+    VALUES (1,'William Tatcher', 45, '23-04-2000');
+INSERT INTO public.vets(
+    id, name, age, date_of_graduation )
+    VALUES (2,'Maisy Smith', 26, '17-01-2019');
+INSERT INTO public.vets(
+    id, name, age, date_of_graduation )
+    VALUES (3,'Stephanie Mendez', 64, '04-05-1981');
+INSERT INTO public.vets(
+    id, name, age, date_of_graduation )
+    VALUES (4,'Jack Harkness', 38, '08-06-2008');
+
+-- Insert data for specializations
+INSERT INTO public.specializations(
+    vets_id, species_id )
+    VALUES (1 ,1 );
+INSERT INTO public.specializations(
+    vets_id, species_id )
+    VALUES (3 ,1 );
+INSERT INTO public.specializations(
+    vets_id, species_id )
+    VALUES (3 ,2 );
+INSERT INTO public.specializations(
+    vets_id, species_id )
+    VALUES (4 ,2 );
+
+-- Insert data for visits
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (1, 7, '24-05-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (3, 7, '22-07-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (4, 8, '02-02-2021' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 9, '05-01-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 9, '08-03-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 9, '14-05-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (3, 10, '04-05-2021' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (4, 1, '24-02-2021' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 2, '21-12-2019' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (1, 2, '10-08-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 2, '07-04-2021' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (3, 3, '29-09-2019' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (4, 4, '03-10-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (4, 4, '04-11-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 5, '24-01-2019' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 5, '15-05-2019' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 5, '27-02-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (2, 5, '03-08-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (3, 6, '24-05-2020' );
+INSERT INTO public.visits(
+    vets_id, animals_id, date)
+    VALUES (1, 6, '11-01-2021' );

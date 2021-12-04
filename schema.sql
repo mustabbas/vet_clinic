@@ -71,3 +71,41 @@ CREATE TABLE IF NOT EXISTS public.animals
       FOREIGN KEY(owner_id)
 	  REFERENCES owners(id)
 )
+
+-- Vet clinic database: add "join table" for visits
+-- Create a table named vets
+CREATE TABLE IF NOT EXISTS public.vets
+(
+    id integer NOT NULL AUTO_INCREMENT,
+    name character varying COLLATE pg_catalog."default",
+    age integer,
+    date_of_graduation date,
+    CONSTRAINT vets_pkey PRIMARY KEY (id)
+)
+
+-- Create "join table" called specializations
+CREATE TABLE IF NOT EXISTS public.specializations
+(
+    vets_id integer,
+    species_id integer,
+    CONSTRAINT fk_vets_id
+      FOREIGN KEY(vets_id)
+	  REFERENCES vets(id),
+    CONSTRAINT fk_species_id
+      FOREIGN KEY(species_id)
+	  REFERENCES species(id)
+)
+
+-- Create "join table" called visits
+CREATE TABLE IF NOT EXISTS public.visits
+(
+    vets_id integer,
+    animals_id integer,
+    date date,
+    CONSTRAINT fk_vets_id
+      FOREIGN KEY(vets_id)
+	  REFERENCES vets(id),
+    CONSTRAINT fk_animals_id
+      FOREIGN KEY(animals_id)
+	  REFERENCES animals(id)
+)
