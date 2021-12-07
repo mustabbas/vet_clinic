@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS public.animals
 -- Create a table named owners
 CREATE TABLE IF NOT EXISTS public.owners
 (
-    id integer NOT NULL,
+    id SERIAL,
     full_name character varying COLLATE pg_catalog."default",
     age integer,
     CONSTRAINT owners_pkey PRIMARY KEY (id)
