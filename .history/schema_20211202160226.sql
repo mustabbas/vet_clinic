@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS public.animals
 -- Create a table named owners
 CREATE TABLE IF NOT EXISTS public.owners
 (
-    id SERIAL,
+    id integer NOT NULL,
     full_name character varying COLLATE pg_catalog."default",
     age integer,
     CONSTRAINT owners_pkey PRIMARY KEY (id)
@@ -109,15 +109,3 @@ CREATE TABLE IF NOT EXISTS public.visits
       FOREIGN KEY(animals_id)
 	  REFERENCES animals(id)
 )
-
--- add an extra column name email to the owners table:
-ALTER TABLE owners ADD COLUMN email VARCHAR(120);
-
--- First performance upgrade, create non-clustered indexes from visits (Improved animals count query)
-CREATE INDEX animals_id_asc on visits (animals_id asc);
-
--- Second performance upgrade, create a non-clustered index from visitis and add extra information (Improved select * queries)
-CREATE INDEX visits_id_asc on visits(visits_id asc, animals_id, date);
-
--- Thierd performance upgrade, create a non-clustered index from owners
-CREATE INDEX email_asc ON owners (email ASC, id, full_name, age);
