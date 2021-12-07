@@ -112,3 +112,11 @@ CREATE TABLE IF NOT EXISTS public.visits
 
 -- add an extra column name email to the owners table:
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+-- First performance upgrade, create non-clustered indexes from visits (Improved animals count query)
+CREATE INDEX animals_id_asc on visits (animals_id asc);
+
+-- Second performance upgrade, create a non-clustered index from visitis and add extra information (Improved select * queries)
+CREATE INDEX visits_id_asc on visits(visits_id asc, animals_id, date);
+
+
