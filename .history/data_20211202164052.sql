@@ -191,10 +191,3 @@ INSERT INTO public.visits(
 INSERT INTO public.visits(
     vets_id, animals_id, date)
     VALUES (1, 6, '11-01-2021' );
-
-
-
-
--- This will add 3.594.280 visits considering you have 10 animals, 4 vets, and it will use around ~87.000 timestamps (~4min approx.)
-INSERT INTO visits (animals_id, vets_id, date) SELECT * FROM (SELECT id FROM animals) animal_ids, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
-

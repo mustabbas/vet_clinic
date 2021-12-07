@@ -109,6 +109,3 @@ CREATE TABLE IF NOT EXISTS public.visits
       FOREIGN KEY(animals_id)
 	  REFERENCES animals(id)
 )
-
--- add an extra column name email to the owners table:
-ALTER TABLE owners ADD COLUMN email VARCHAR(120);
