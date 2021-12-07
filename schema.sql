@@ -119,4 +119,5 @@ CREATE INDEX animals_id_asc on visits (animals_id asc);
 -- Second performance upgrade, create a non-clustered index from visitis and add extra information (Improved select * queries)
 CREATE INDEX visits_id_asc on visits(visits_id asc, animals_id, date);
 
-
+-- Thierd performance upgrade, create a non-clustered index from owners
+CREATE INDEX email_asc ON owners (email ASC, id, full_name, age);
