@@ -121,3 +121,6 @@ CREATE INDEX visits_id_asc on visits(visits_id asc, animals_id, date);
 
 -- Thierd performance upgrade, create a non-clustered index from owners
 CREATE INDEX email_asc ON owners (email ASC, id, full_name, age);
+
+
+drawSQL-export-2021-12-08_23_30.png
